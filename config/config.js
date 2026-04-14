@@ -1,0 +1,1 @@
+export const apiUrl = { url:"https://sitandlipapi.onrender.com/api/v1" }
