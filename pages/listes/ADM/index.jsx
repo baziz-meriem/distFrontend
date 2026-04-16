@@ -49,7 +49,7 @@ export default ListAM;
 
 export async function getServerSideProps() {
   const data = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/ADM"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/ADM"
   );
   const AM = await data.json();
   return { props: { AM } };

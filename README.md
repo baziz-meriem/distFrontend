@@ -30,7 +30,7 @@ The live **dispenser / vending operations** frontend is hosted on Vercel:
 The default API base URL is set in `config/config.js`:
 
 ```js
-https://sitandlipapi.onrender.com/api/v1
+https://distbackend-96a5.onrender.com/api/v1
 ```
 
 Many pages also call this URL directly. To point the app at another environment, update `config/config.js` and replace hardcoded URLs as needed.

@@ -32,7 +32,7 @@ const createADM = ({ clients }) => {
   const handleSubmit = () => {
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/profileManagement/adm",
+        "https://distbackend-96a5.onrender.com/api/v1/profileManagement/adm",
         data
       )
       .then((res) => {
@@ -124,7 +124,7 @@ export default createADM;
 export async function getServerSideProps() {
   // Get the clients
   let clients = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/client"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client"
   );
   clients = await clients.json();
 

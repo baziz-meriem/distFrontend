@@ -16,7 +16,7 @@ const AcSignlePage = ({ AC }) => {
   const deleteAC = () => {
     axios
       .delete(
-        `https://sitandlipapi.onrender.com/api/v1/profileManagement/AC/${id}`
+        `https://distbackend-96a5.onrender.com/api/v1/profileManagement/AC/${id}`
       )
       .then((res) => router.push("/listes/AC"));
   };
@@ -100,7 +100,7 @@ export async function getServerSideProps(context) {
   const { params } = context;
   const { id } = params;
   const data = await fetch(
-    `https://sitandlipapi.onrender.com/api/v1/profileManagement/AC/${id}`
+    `https://distbackend-96a5.onrender.com/api/v1/profileManagement/AC/${id}`
   );
   const AC = await data.json();
 

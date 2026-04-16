@@ -12,19 +12,19 @@ const InfoAnnonce = ({ title }) => {
   useEffect(() => {
     if (!annonceData) {
       axios
-        .get(`https://sitandlipapi.onrender.com/api/v1/annonce/annonce/${id}`)
+        .get(`https://distbackend-96a5.onrender.com/api/v1/annonce/annonce/${id}`)
         .then((res) => {
           setData(res.data.data);
           axios
             .get(
-              `https://sitandlipapi.onrender.com/api/v1/annonce/annonceur/${res.data.data.idAnnonceur}`
+              `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur/${res.data.data.idAnnonceur}`
             )
             .then((res) => {
               setannonceur(res.data.data);
             });
           //   axios
           //     .get(
-          //       `https://sitandlipapi.onrender.com/api/v1/resourceManagement/boisson/2/${res.data.data.idBoisson}`
+          //       `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/boisson/2/${res.data.data.idBoisson}`
           //     )
           //     .then((res) => {
           //       console.log(res);
@@ -41,7 +41,7 @@ const InfoAnnonce = ({ title }) => {
 
   const updateClient = () => {
     axios
-      .put(`https://sitandlipapi.onrender.com/api/v1/annonce/annonceur/${id}`, {
+      .put(`https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur/${id}`, {
         nom: annonceData.nom,
         idClient: annonceData.idClient,
       })

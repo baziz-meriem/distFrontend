@@ -9,7 +9,7 @@ const DistributeurInfoCard = ({ title, id }) => {
     if (!distributeurData) {
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/${id}`
+          `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/${id}`
         )
         .then((res) => {
           setData(res.data.data);
@@ -26,7 +26,7 @@ const DistributeurInfoCard = ({ title, id }) => {
   const updateClient = () => {
     axios
       .put(
-        `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/${id}`,
+        `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/${id}`,
         {
           etat: distributeurData.etat,
           type: distributeurData.type,

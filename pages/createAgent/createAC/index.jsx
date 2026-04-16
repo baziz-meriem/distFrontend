@@ -30,7 +30,7 @@ const createAC = () => {
     console.log(data);
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/profileManagement/ac",
+        "https://distbackend-96a5.onrender.com/api/v1/profileManagement/ac",
         data
       )
       .then((res) => {

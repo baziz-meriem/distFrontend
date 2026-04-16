@@ -20,7 +20,7 @@ const AnnonceCard = ({ annonce, setLoading }) => {
   const deleteAnnonce = () => {
     axios
       .delete(
-        `https://sitandlipapi.onrender.com/api/v1/annonce/annonce/${annonce.id}`
+        `https://distbackend-96a5.onrender.com/api/v1/annonce/annonce/${annonce.id}`
       )
       .then(() => {
         toast.success("annonce deleted");

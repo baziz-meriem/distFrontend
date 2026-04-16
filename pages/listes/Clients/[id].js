@@ -19,7 +19,7 @@ const Clients = () => {
     if (!Data) {
       axios
         .get(
-          "https://sitandlipapi.onrender.com/api/v1/profileManagement/client"
+          "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client"
         )
         .then((res) => {
           console.log(res.data);
@@ -35,7 +35,7 @@ const Clients = () => {
   const deleteClient = () => {
     axios
       .delete(
-        `https://sitandlipapi.onrender.com/api/v1/profileManagement/client/${id}`
+        `https://distbackend-96a5.onrender.com/api/v1/profileManagement/client/${id}`
       )
       .then((res) => {
         router.push("/listes/Clients");
@@ -48,7 +48,7 @@ const Clients = () => {
       id &&
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/profileManagement/adm/client/${id}`
+          `https://distbackend-96a5.onrender.com/api/v1/profileManagement/adm/client/${id}`
         )
         .then((res) => {
           setADM(res.data.data[0].ADM[0]);

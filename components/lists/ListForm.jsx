@@ -7,7 +7,7 @@ function  ListForm({ agent }){
   useEffect(() => {
     if (!ADMs) {
       axios
-        .get("https://sitandlipapi.onrender.com/api/v1/profileManagement/adm")
+        .get("https://distbackend-96a5.onrender.com/api/v1/profileManagement/adm")
         .then((res) => {
           let options = [];
          if(!data){ //to remove later

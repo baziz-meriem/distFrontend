@@ -1,1 +1,1 @@
-export const apiUrl = { url:"https://sitandlipapi.onrender.com/api/v1" }
+export const apiUrl = { url:"https://distbackend-96a5.onrender.com/api/v1" }

@@ -26,18 +26,18 @@ const Dashboard = () => {
     const fetchData = async () => {
       try {
         const distributeurResponse = await axios.get(
-          "https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur"
+          "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur"
         );
         setDistributeur(distributeurResponse.data.data);
 
         const clientsResponse = await axios.get(
-          "https://sitandlipapi.onrender.com/api/v1/profileManagement/client"
+          "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client"
         );
         console.log("clientsResponse", clientsResponse);
         setNbClient(clientsResponse.data.data.length);
 
         const ADMResponse = await axios.get(
-          "https://sitandlipapi.onrender.com/api/v1/profileManagement/ADM"
+          "https://distbackend-96a5.onrender.com/api/v1/profileManagement/ADM"
         );
         setNbADM(ADMResponse.data.data.length);
 

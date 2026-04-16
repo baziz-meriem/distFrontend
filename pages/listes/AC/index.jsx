@@ -52,7 +52,7 @@ export default ListAC;
 
 export async function getServerSideProps() {
     const data = await fetch(
-      "https://sitandlipapi.onrender.com/api/v1/profileManagement/AC"
+      "https://distbackend-96a5.onrender.com/api/v1/profileManagement/AC"
     );
     const AC = await data.json();
     return { props: { AC } };

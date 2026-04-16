@@ -24,7 +24,7 @@ const ListAnnonceur = () => {
 
         if (ClientId) {
           const data = await fetch(
-            `https://sitandlipapi.onrender.com/api/v1/annonce/annonceur/client/${ClientId}`
+            `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur/client/${ClientId}`
           );
           const annonceursData = await data.json();
           setAnnonceurs(annonceursData);

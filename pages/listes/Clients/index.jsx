@@ -10,7 +10,7 @@ const ListeClients = () => {
     if (!Data) {
       axios
         .get(
-          "https://sitandlipapi.onrender.com/api/v1/profileManagement/client"
+          "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client"
         )
         .then((res) => {
           console.log(res.data);

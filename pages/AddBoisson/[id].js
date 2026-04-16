@@ -34,7 +34,7 @@ const AddBoisson = () => {
     !drinks &&
       axios
         .get(
-          "https://sitandlipapi.onrender.com/api/v1/resourceManagement/boisson/"
+          "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/boisson/"
         )
         .then((res) => {
           setDrinks(res.data.data);
@@ -83,7 +83,7 @@ const AddBoisson = () => {
   const addNewDrink = async () => {
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/resourceManagement/boisson",
+        "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/boisson",
         drinkData
       )
       .then((res) => {

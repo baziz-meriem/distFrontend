@@ -5,11 +5,11 @@ const endpoint = apiUrl.url + "/resourceManagement/distributeur";
 export const getAllDistributeur = (idClient, role) => {
   if (role != "SADM") {
     return http.get(
-      `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/client/${idClient}`
+      `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/client/${idClient}`
     );
   } else {
     return http.get(
-      `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur`
+      `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur`
     );
   }
 };

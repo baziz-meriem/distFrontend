@@ -17,7 +17,7 @@ const Map = () => {
     if (!disPosition && id) {
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/${id}`
+          `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/${id}`
         )
         .then((res) =>
           setPosition(

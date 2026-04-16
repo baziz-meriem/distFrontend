@@ -35,7 +35,7 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
     console.log("this is the data of the distributeur", data);
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur",
+        "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur",
         data
       )
       .then((res) => {
@@ -140,19 +140,19 @@ export default AddDistributeur;
 export async function getServerSideProps() {
   // Get the clients
   let clients = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/client"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client"
   );
   clients = await clients.json();
 
   // get the AMs
   let AMs = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/am"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/am"
   );
   AMs = await AMs.json();
 
   // Get all the regions
   let regions = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/resourceManagement/region"
+    "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/region"
   );
   regions = await regions.json();
   console.log(regions);

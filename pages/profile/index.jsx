@@ -26,7 +26,7 @@ const Profile = () => {
         setUserId(id);
         try {
           const response = await fetch(
-            `https://sitandlipapi.onrender.com/api/v1/profileManagement/${role}/${id}`
+            `https://distbackend-96a5.onrender.com/api/v1/profileManagement/${role}/${id}`
           );
           const data = await response.json();
           const responseData = data.data;
@@ -45,7 +45,7 @@ const Profile = () => {
     console.log("----------profilesubmit---------------",profileData)
     axios
     .put(
-      `https://sitandlipapi.onrender.com/api/v1/profileManagement/${userRole}/${userId}`,profileData
+      `https://distbackend-96a5.onrender.com/api/v1/profileManagement/${userRole}/${userId}`,profileData
     )
     .then((res) => {
       console.log(res);

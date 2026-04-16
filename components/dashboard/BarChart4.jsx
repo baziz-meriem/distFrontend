@@ -34,7 +34,7 @@ const BarChart4 = (props) => {
     !distributeur &&
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/client/${1}`
+          `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/client/${1}`
         )
         .then((res) => setDistributeur(res.data.data));
   });

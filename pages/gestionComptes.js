@@ -38,17 +38,17 @@ export default gestionComptes;
 
 export async function getServerSideProps() {
   let AM = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/AM"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/AM"
   );
   AM = await AM.json();
 
   let AC = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/AC"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/AC"
   ); 
   AC = await AC.json();
 
   let decideurs = await fetch(
-    "https://sitandlipapi.onrender.com/api/v1/profileManagement/decideur"
+    "https://distbackend-96a5.onrender.com/api/v1/profileManagement/decideur"
   );
   decideurs = await decideurs.json();
 

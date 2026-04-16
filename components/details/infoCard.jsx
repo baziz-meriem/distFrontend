@@ -7,7 +7,7 @@ const infoCard = ({ title, id }) => {
   useEffect(() => {
     if (!clientData) {
       axios
-        .get(`https://sitandlipapi.onrender.com/api/v1/profileManagement/client/${id}`)
+        .get(`https://distbackend-96a5.onrender.com/api/v1/profileManagement/client/${id}`)
         .then((res) => {
           setData(res.data.data);
           console.log(res.data.data);
@@ -22,7 +22,7 @@ const infoCard = ({ title, id }) => {
 
   const updateClient = () => {
     axios
-      .put(`https://sitandlipapi.onrender.com/api/v1/profileManagement/client/${id}`, {
+      .put(`https://distbackend-96a5.onrender.com/api/v1/profileManagement/client/${id}`, {
         nom: clientData.nom,
         email: clientData.email,
         numTel: clientData.numTel,

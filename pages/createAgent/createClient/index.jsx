@@ -15,7 +15,7 @@ const createClient = () => {
     console.log(data);
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/profileManagement/client",
+        "https://distbackend-96a5.onrender.com/api/v1/profileManagement/client",
         data
       )
       .then((res) => {

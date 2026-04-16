@@ -31,7 +31,7 @@ const CreateAnnonceur = () => {
   const handleSubmit = () => {
     console.log(data);
     axios
-      .post("https://sitandlipapi.onrender.com/api/v1/annonce/annonceur", data)
+      .post("https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur", data)
       .then((res) => {
         console.log(res);
         if (res.status === 201) {

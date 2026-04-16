@@ -24,7 +24,7 @@ const CreateAnnonce = ({ setLoading }) => {
   // Get Data
   const getRegion = () => {
     axios
-      .get("https://sitandlipapi.onrender.com/api/v1/resourceManagement/region")
+      .get("https://distbackend-96a5.onrender.com/api/v1/resourceManagement/region")
       .then((data) => {
         setRegions(data.data.data);
       });
@@ -43,7 +43,7 @@ const CreateAnnonce = ({ setLoading }) => {
 
     prixAnnonce: Number(annonceData.prixAnnonce),
       axios
-        .post("https://sitandlipapi.onrender.com/api/v1/annonce/annonce", {
+        .post("https://distbackend-96a5.onrender.com/api/v1/annonce/annonce", {
           ...annonceData,
           prixAnnonce: Number(annonceData.prixAnnonce),
           DateDebut: new Date(

@@ -15,7 +15,7 @@ const ListeAnnonce = ({ loadingAnnonce, setLoading }) => {
   const getAnnonces = () => {
     axios
       .get(
-        `https://sitandlipapi.onrender.com/api/v1/annonce/annonce/annonceur/${id}`
+        `https://distbackend-96a5.onrender.com/api/v1/annonce/annonce/annonceur/${id}`
       )
       .then((data) => {
         setAnnonces(data.data.data);

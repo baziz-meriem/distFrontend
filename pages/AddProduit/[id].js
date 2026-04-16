@@ -39,7 +39,7 @@ const AddProduit = () => {
     !products &&
       axios
         .get(
-          "https://sitandlipapi.onrender.com/api/v1/resourceManagement/produit"
+          "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/produit"
         )
         .then((res) => {
           setProducts(res.data.data);

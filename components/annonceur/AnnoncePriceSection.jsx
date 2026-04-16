@@ -26,7 +26,7 @@ const AnnoncePrice = ({ title }) => {
     if (!region) {
       axios
         .get(
-          "https://sitandlipapi.onrender.com/api/v1/resourceManagement/region"
+          "https://distbackend-96a5.onrender.com/api/v1/resourceManagement/region"
         )
         .then((res) => {
           setRegion(res.data.data);
@@ -37,7 +37,7 @@ const AnnoncePrice = ({ title }) => {
     if (!prices && id) {
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/annonce/annonceRegion/${id}`
+          `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceRegion/${id}`
         )
         .then((res) => {
           setPrices(res.data.data);
@@ -61,7 +61,7 @@ const AnnoncePrice = ({ title }) => {
   const addPrice = () => {
     console.log("this is the data", data);
     axios
-      .post("https://sitandlipapi.onrender.com/api/v1/annonce/annonceRegion", {
+      .post("https://distbackend-96a5.onrender.com/api/v1/annonce/annonceRegion", {
         ...data,
         PrixAnnonce: Number(data.PrixAnnonce),
       })
@@ -74,7 +74,7 @@ const AnnoncePrice = ({ title }) => {
   const deletePrice = (price) => {
     axios
       .delete(
-        `https://sitandlipapi.onrender.com/api/v1/annonce/annonceRegion/${price.idAnnonce}/${price.idRegion}`
+        `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceRegion/${price.idAnnonce}/${price.idRegion}`
       )
       .then((data) => {
         toast.error("Price deleted Successfuly "), setPrices(null);

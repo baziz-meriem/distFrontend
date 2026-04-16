@@ -14,7 +14,7 @@ const AmSignlePage = ({ AM,distributeurs,pannesByMonth ,pannesByYear }) => {
   const deleteAM = () => {
     axios
       .delete(
-        `https://sitandlipapi.onrender.com/api/v1/profileManagement/AM/${id}`
+        `https://distbackend-96a5.onrender.com/api/v1/profileManagement/AM/${id}`
       )
       .then((res) => router.push("/listes/AM"));
   };
@@ -142,24 +142,24 @@ export async function getServerSideProps(context) {
   const { params } = context;
   const { id } = params;
   const data = await fetch(
-    `https://sitandlipapi.onrender.com/api/v1/profileManagement/AM/${id}`
+    `https://distbackend-96a5.onrender.com/api/v1/profileManagement/AM/${id}`
   );
   const AM = await data.json();
 
 
   let distributeurs = await fetch(
-    `https://sitandlipapi.onrender.com/api/v1/resourceManagement/distributeur/am/${id}`
+    `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/am/${id}`
   );
   distributeurs = await distributeurs.json();
 
   let pannesByYear = await fetch(
-    `https://sitandlipapi.onrender.com/api/v1/statistiques/years/${id}`
+    `https://distbackend-96a5.onrender.com/api/v1/statistiques/years/${id}`
   );
   pannesByYear = await pannesByYear.json();
 
   const currentYear = new Date().getFullYear();
   let pannesByMonth = await fetch(
-    `https://sitandlipapi.onrender.com/api/v1/statistiques/months/${currentYear}/${id}`
+    `https://distbackend-96a5.onrender.com/api/v1/statistiques/months/${currentYear}/${id}`
   );
   pannesByMonth  = await pannesByMonth.json();
   return {

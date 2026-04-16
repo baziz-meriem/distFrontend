@@ -31,7 +31,7 @@ const createAM = () => {
     console.log(data);
     axios
       .post(
-        "https://sitandlipapi.onrender.com/api/v1/profileManagement/am",
+        "https://distbackend-96a5.onrender.com/api/v1/profileManagement/am",
         data
       )
       .then((res) => {

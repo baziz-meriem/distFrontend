@@ -98,12 +98,12 @@ const ReclamationDetails = () => {
   const cancelPayment = () => {
     axios
       .get(
-        `https://sitandlipapi.onrender.com/api/v1/paymentManagement/payment/${reclamationData.idPayment}`
+        `https://distbackend-96a5.onrender.com/api/v1/paymentManagement/payment/${reclamationData.idPayment}`
       )
       .then((res) => {
         axios
           .put(
-            "https://sitandlipapi.onrender.com/api/v1/paymentManagement/payment/cancel",
+            "https://distbackend-96a5.onrender.com/api/v1/paymentManagement/payment/cancel",
             { paymentIntentId: res.data.data.paymentIntentId }
           )
           .then((res) => {
@@ -117,7 +117,7 @@ const ReclamationDetails = () => {
   const closeReclamation = () => {
     axios
       .put(
-        `https://sitandlipapi.onrender.com/api/v1/reclamation/reclamation/${reclamationData.id}`,
+        `https://distbackend-96a5.onrender.com/api/v1/reclamation/reclamation/${reclamationData.id}`,
         {
           subject: reclamationData.subject,
           description: reclamationData.description,

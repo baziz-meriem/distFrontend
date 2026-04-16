@@ -102,7 +102,7 @@ const Statistics = ({ loggedInUser }) => {
       !statsData &&
         axios
           .get(
-            `https://sitandlipapi.onrender.com/api/v1/statistiques/satatUse/tauxUseByRegionsClient/${
+            `https://distbackend-96a5.onrender.com/api/v1/statistiques/satatUse/tauxUseByRegionsClient/${
               JSON.parse(loggedInUser).idClient
             }/${selectedPeriod.dateDebut}/${selectedPeriod.dateFin}`
           )
@@ -114,7 +114,7 @@ const Statistics = ({ loggedInUser }) => {
       !revenuData &&
         axios
           .get(
-            `https://sitandlipapi.onrender.com/api/v1/statistiques/revenue/distributeur/client/${
+            `https://distbackend-96a5.onrender.com/api/v1/statistiques/revenue/distributeur/client/${
               JSON.parse(loggedInUser).idClient
             }`
           )
@@ -122,7 +122,7 @@ const Statistics = ({ loggedInUser }) => {
       !drinkRevenuData &&
         axios
           .get(
-            `https://sitandlipapi.onrender.com/api/v1/statistiques/revenue/${
+            `https://distbackend-96a5.onrender.com/api/v1/statistiques/revenue/${
               JSON.parse(loggedInUser).idClient
             }/boisson`
           )
@@ -130,7 +130,7 @@ const Statistics = ({ loggedInUser }) => {
       !regionRevenuData &&
         axios
           .get(
-            `https://sitandlipapi.onrender.com/api/v1/statistiques/revenue/region/client/${
+            `https://distbackend-96a5.onrender.com/api/v1/statistiques/revenue/region/client/${
               JSON.parse(loggedInUser).idClient
             }/`
           )

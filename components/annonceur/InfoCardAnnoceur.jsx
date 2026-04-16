@@ -11,7 +11,7 @@ const InfoCardAnnoceur = ({ title }) => {
     if (!annonceurData) {
       axios
         .get(
-          `https://sitandlipapi.onrender.com/api/v1/annonce/annonceur/${id}`
+          `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur/${id}`
         )
         .then((res) => {
           setData(res.data.data);
@@ -28,7 +28,7 @@ const InfoCardAnnoceur = ({ title }) => {
   const updateClient = () => {
     axios
       .put(
-        `https://sitandlipapi.onrender.com/api/v1/annonce/annonceur/${id}`,
+        `https://distbackend-96a5.onrender.com/api/v1/annonce/annonceur/${id}`,
         {
           nom: annonceurData.nom,
           email: annonceurData.email,
