@@ -103,9 +103,9 @@ const ConnectForm = () => {
               </Link>
             </div>
             <div className="text-xs text-right">
-              dont have an accont?{" "}
-              <Link href="/singup" className="text-light-green underline">
-                Sign In
+              Don&apos;t have an account?{" "}
+              <Link href="/signup" className="text-light-green underline">
+                Sign up
               </Link>
             </div>
           </div>

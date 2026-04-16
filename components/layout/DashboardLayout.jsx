@@ -10,6 +10,7 @@ const DashboardLayout = ({ children }) => {
     "/",
     "/about",
     "/login",
+    "/signup",
     "/forgetPassword",
     "/resetPassword",
   ];

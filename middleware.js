@@ -4,9 +4,17 @@ import { hasAccesss } from "./utils/accessControl";
 export async function middleware(req, res) {
   const { cookies } = req;
 
+  // Legacy typo: old links used /singup
+  if (req.nextUrl.pathname === "/singup") {
+    return NextResponse.redirect(new URL("/signup", req.url));
+  }
+
   const loggedinUser = cookies.get("user");
 
-  if (req.nextUrl.pathname.startsWith("/login")) {
+  if (
+    req.nextUrl.pathname.startsWith("/login") ||
+    req.nextUrl.pathname.startsWith("/signup")
+  ) {
     if (loggedinUser) {
       const dashboardUrl = new URL("/dashboard", req.url);
       return NextResponse.redirect(dashboardUrl);
