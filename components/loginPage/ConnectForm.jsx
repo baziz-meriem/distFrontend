@@ -69,7 +69,15 @@ const ConnectForm = () => {
       persistAuthToken(token);
       Cookies.set("user", JSON.stringify(session), { expires: 7, path: "/" });
       toast.success("Logged in");
-      await router.push("/dashboard");
+      // Full navigation guarantees the `user` cookie is visible to middleware.
+      // Tiny delay lets the toast paint; `await router.push` also felt slow (waits on /dashboard).
+      if (typeof window !== "undefined") {
+        window.setTimeout(() => {
+          window.location.assign("/dashboard");
+        }, 120);
+        return;
+      }
+      void router.replace("/dashboard");
     } catch (error) {
       const msg =
         error.response?.data?.message ||

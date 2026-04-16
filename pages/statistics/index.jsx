@@ -1,7 +1,6 @@
 import PageHeader from "@/components/shared/PageHeader";
 import Card from "@/components/dashboard/Card";
 import BarChart1 from "@/components/dashboard/BarChart1";
-import LineChart from "@/components/dashboard/LineChart";
 import dynamic from "next/dynamic";
 import Cookies from "js-cookie";
 import authMiddleware from "@/middlewares/authMiddleware";

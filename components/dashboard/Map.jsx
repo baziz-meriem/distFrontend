@@ -7,29 +7,36 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import axios from "axios";
 import { useRouter } from "next/router";
 import Loader from "../shared/Loader";
+import { apiUrl } from "@/config/config";
 
 const Map = () => {
   const [disPosition, setPosition] = useState(null);
+  const [detail, setDetail] = useState(null);
   const router = useRouter();
   const { id } = router.query;
+
   useEffect(() => {
-    console.log(id);
-    if (!disPosition && id) {
-      axios
-        .get(
-          `https://distbackend-96a5.onrender.com/api/v1/resourceManagement/distributeur/${id}`
-        )
-        .then((res) =>
+    if (!id) return;
+    axios
+      .get(
+        `${apiUrl.url}/resourceManagement/distributeur/${id}`
+      )
+      .then((res) => {
+        const d = res.data?.data;
+        setDetail(d);
+        if (d?.position) {
           setPosition(
-            res.data.data.position.split(",").map((elem) => Number(elem))
-          )
-        );
-    }
+            String(d.position).split(",").map((elem) => Number(elem))
+          );
+        }
+      })
+      .catch(() => setPosition(null));
   }, [id]);
+
   const positionIcon = L.icon({
     iconUrl:
       "https://cdn.jsdelivr.net/npm/leaflet@1.7.1/dist/images/marker-icon.png",
-    iconSize: [20, 38],
+    iconSize: [25, 41],
     iconAnchor: [12, 41],
     popupAnchor: [1, -34],
     shadowUrl:
@@ -38,20 +45,32 @@ const Map = () => {
     shadowAnchor: [12, 41],
   });
 
-  if (!disPosition) return <Loader/>;
+  const label =
+    detail?.nom ||
+    detail?.name ||
+    (detail?.type && id ? `${detail.type} · #${id}` : null) ||
+    (id ? `Distributor #${id}` : "Distributor");
+
+  if (!disPosition) return <Loader />;
   return (
     <div className="">
       <MapContainer
         style={{ height: "80vh" }}
         center={disPosition}
-        zoom={5}
+        zoom={14}
+        scrollWheelZoom
       >
         <TileLayer
-          attribution="&copy; OpenStreetMap contributors"
-          url={`https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWVyaWVtOGIiLCJhIjoiY2xmdWN5NXIwMDlwazNxcjM2ZjV4eDVyayJ9.KI6q1LujGSSGkarrCG7aPw`}
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={disPosition} icon={positionIcon}>
-          <Popup>Distributeur num {id}</Popup>
+          <Popup>
+            <span className="font-semibold">{label}</span>
+            {detail?.type ? (
+              <span className="mt-1 block text-xs text-slate-600">{detail.type}</span>
+            ) : null}
+          </Popup>
         </Marker>
       </MapContainer>
     </div>

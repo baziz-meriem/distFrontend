@@ -1,6 +1,7 @@
 import axios from 'axios';
 import {toast} from 'react-toastify';
 
+axios.defaults.timeout = 45000;
 
 //axios.defaults.headers.common['x-auth-token'] = auth.getJwt();
 
