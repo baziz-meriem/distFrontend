@@ -23,7 +23,7 @@ const SideBar = () => {
   const Links = [
     {
       id: 1,
-      name: "Dashbord",
+      name: "Dashboard",
       link: "/dashboard",
       label: "dashboard",
       icon: faHome,
@@ -37,28 +37,28 @@ const SideBar = () => {
     },
     {
       id: 3,
-      name: "Gestion des comptes",
+      name: "Account management",
       link: "/gestionComptes",
       label: "createAgents",
       icon: faUsers,
     },
     {
       id: 4,
-      name: "Nos distributeurs",
+      name: "Distributors",
       link: "/listes/Distributeurs/AC",
       label: "distributeurs",
       icon: faHardDrive,
     },
     {
       id: 7,
-      name: "Annonces",
+      name: "Ads",
       link: "/listes/Annonceur",
       label: "annonce",
       icon: faRectangleAd,
     },
     {
       id: 8,
-      name: "Réclamations",
+      name: "Claims",
       link: "/listes/Reclamations",
       label: "reclamations",
       icon: faTriangleExclamation,
@@ -66,14 +66,14 @@ const SideBar = () => {
 
     {
       id: 10,
-      name: "Statistiques",
+      name: "Statistics",
       link: "/statistics",
       label: "stats",
       icon: faChartBar,
     },
     {
       id: 5,
-      name: "Mon profil",
+      name: "My profile",
       link: "/profile",
       label: "profil",
       icon: faUser,
@@ -85,7 +85,6 @@ const SideBar = () => {
     if (!loggedInUser) {
       const cookieValue = Cookies.get("user");
       if (cookieValue) {
-       // console.log(JSON.parse(cookieValue));
         setUser(JSON.parse(cookieValue));
       }
     }
@@ -109,32 +108,29 @@ const SideBar = () => {
           className="w-10 h-10 cursor-pointer"
         ></Image>
       </div>
-      <div className="mt-10">
-        {Links.map((link, key) =>
-          loggedInUser && hasAccess(loggedInUser.role, link.label) ? (
-            <div
-              key={key}
-              className={`${  
-                router.pathname == link.link
-                  ? "bg-dark-green font-medium cursor-pointer"
+      <nav className="mt-10" aria-label="Main">
+        {Links.map((item, key) =>
+          loggedInUser && hasAccess(loggedInUser.role, item.label) ? (
+            <Link
+              href={item.link}
+              key={item.id}
+              className={`${
+                router.pathname === item.link
+                  ? "bg-dark-green font-medium"
                   : ""
-              } text-white px-3 py-3 rounded-md my-3 font-md flex`}
+              } text-white px-3 py-3 rounded-md my-3 font-md flex items-center gap-2 hover:bg-dark-green/50`}
             >
               <FontAwesomeIcon
-                icon={link.icon}
+                icon={item.icon}
                 color="white"
                 className="text-sm"
                 width="15"
               />
-              <Link href={link.link} className="ml-2 text-sm">
-                {link.name}
-              </Link>
-            </div>
-          ) : (
-            <div></div>
-          )
+              <span className="text-sm">{item.name}</span>
+            </Link>
+          ) : null
         )}
-      </div>
+      </nav>
     </div>
   );
 };

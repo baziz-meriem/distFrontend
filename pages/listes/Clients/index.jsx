@@ -29,8 +29,8 @@ const ListeClients = () => {
     <div className="flex flex-col min-h-full">
       <div className="flex-none">
         <PageHeader
-          title="liste des Clients"
-          description="Affiche la liste de tous les clients ainsi que leurs informations."
+          title="Clients"
+          description="Lists all clients and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

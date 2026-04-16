@@ -50,7 +50,7 @@ const GetPosMap = ({ setData, data }) => {
 
   return (
     <div className="rounded-lg overflow-hidden shadow-md border border-gray-300">
-        <div className="p-2">Selectionner la position du distributeur</div>
+        <div className="p-2">Click the map to set the distributor location</div>
       <MapContainer style={{ height: "45vh" }} center={[31, 5]} zoom={6}>
         <TileLayer
           attribution="&copy; OpenStreetMap contributors"

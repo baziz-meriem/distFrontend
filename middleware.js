@@ -1,7 +1,6 @@
-import { NextResponse, NextRequest } from "next/server";
-import { hasAccesss } from "./utils/accessControl";
+import { NextResponse } from "next/server";
 
-export async function middleware(req, res) {
+export async function middleware(req) {
   const { cookies } = req;
 
   // Legacy typo: old links used /singup
@@ -31,11 +30,12 @@ export async function middleware(req, res) {
     if (!loggedinUser) {
       const loginUrl = new URL("/login", req.url);
       return NextResponse.redirect(loginUrl);
-    } else {
-      // if (!hasAccesss(loggedinUser.role, "createAgent")) {
-      //   const loginUrl = new URL("/not-authorized", req.url);
-      //   return NextResponse.redirect(loginUrl);
-      // }
     }
   }
+
+  return NextResponse.next();
 }
+
+export const config = {
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+};

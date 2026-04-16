@@ -27,7 +27,7 @@ const affectationCard = ({ title , data }) => {
             <input
               type="text"
               className="w-full pl-1 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={data? data.nom : ""}
             />
         </div>
@@ -35,7 +35,7 @@ const affectationCard = ({ title , data }) => {
           <input
             type="text"
             className="w-full pl-1 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-            placeholder="Chercher..."
+            placeholder="Search..."
             value={data? data.prenom : ""}
           />
         </div>
@@ -43,7 +43,7 @@ const affectationCard = ({ title , data }) => {
           <input
             type="text"
             className="w-full pl-1 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-            placeholder="Chercher..."
+            placeholder="Search..."
             value={data? data.email : ""}
           />
         </div>

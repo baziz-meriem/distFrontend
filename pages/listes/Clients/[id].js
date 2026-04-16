@@ -63,15 +63,15 @@ const Clients = () => {
       <ToastContainer />
       <PageHeader
         title="Client Details"
-        description="Affiche les informations du Client"
+        description="Client details"
       />
       <button
         className="block ml-auto  btn-red px-7 py-2.5 mt-6 light-grey relative"
         onClick={() => deleteClient()}
       >
-        Supprimer le client
+        Delete
       </button>
-      <InfoCard title="Infos du Client" id={id} />
+      <InfoCard title="Client info" id={id} />
       {ADM ? (
         <AffectationCard title="ADM du client" data={ADM} />
       ) : (

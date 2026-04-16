@@ -9,6 +9,7 @@ const DashboardLayout = ({ children }) => {
   const pagesWithoutLayout = [
     "/",
     "/about",
+    "/contact",
     "/login",
     "/signup",
     "/forgetPassword",

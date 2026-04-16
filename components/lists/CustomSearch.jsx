@@ -9,7 +9,7 @@ const CustomSearch = () => {
             <input
                 type="text"
                 className="w-64 py-2 pl-10 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-                placeholder="Chercher..."
+                placeholder="Search..."
             />
             <div className="flex items-center justify-center gap-2">
                 <Image

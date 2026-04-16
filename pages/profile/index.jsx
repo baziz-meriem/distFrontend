@@ -51,9 +51,9 @@ const Profile = () => {
       console.log(res);
       if (res.status === 200) {
         
-        toast.success("profile updated Succesfully!");
+        toast.success("profile updated Successfully!");
       } else {
-        toast.error("Some errors occured while updating!");
+        toast.error("Some errors occurred while updating!");
       }
     });
   
@@ -61,7 +61,7 @@ const Profile = () => {
   return (
     <div className="h-full w-full overflow-hidden">
       <ToastContainer />
-      <PageHeader title="Profile page" description="Some description here" />
+      <PageHeader title="Profile" description="View and update your account details." />
       <div className="relative flex flex-row">
         <div className="w-1/2">
         <div className="space-y-10 mt-16 ">
@@ -119,7 +119,7 @@ const Profile = () => {
           <div className="flex justify-end">
               <button className="btn-green px-11 py-2.5 mt-4 light-grey"
                       onClick={handleSubmit}>
-                Modifier
+                Save
               </button>
             </div>
         </div>

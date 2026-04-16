@@ -38,7 +38,7 @@ const DistributeurInfoCard = ({ title, id }) => {
         }
       )
       .then((res) => {
-        toast.success("Le Distributeur a été modifié");
+        toast.success("Distributor updated successfully");
       })
       .catch((err) => console.log(err));
   };
@@ -67,7 +67,7 @@ const DistributeurInfoCard = ({ title, id }) => {
       </div>
       <div className="w-full flex flex-wrap justify-between items-center">
         <div className="w-1/3 mx-10  p-2  border-solid border-grey">
-          <label className>Type de distributeur</label>
+          <label className>Distributor type</label>
           <input
             type="text"
             className="w-full shadow-md p-2 rounded-md  mt-2 border bg-transparent placeholder-gray-300 focus:outline-none"
@@ -82,7 +82,7 @@ const DistributeurInfoCard = ({ title, id }) => {
           <input
             type="text"
             className="w-full shadow-md p-2 rounded-md  mt-2 border bg-transparent placeholder-gray-300 focus:outline-none"
-            placeholder="Chercher..."
+            placeholder="Search..."
             value={distributeurData.etat}
             onChange={(e) => handleChange(e)}
             name="etat"
@@ -90,11 +90,11 @@ const DistributeurInfoCard = ({ title, id }) => {
         </div>
 
         <div className="w-1/3 mx-10  p-2 mt-2 border-solid border-grey">
-          <label className>code de Deverouillage</label>
+          <label className>Unlock code</label>
           <input
             type="text"
             className="w-full shadow-md p-2 rounded-md  mt-2 border bg-transparent placeholder-gray-300 focus:outline-none"
-            placeholder="Chercher..."
+            placeholder="Search..."
             value={distributeurData.codeDeverouillage}
             onChange={(e) => handleChange(e)}
             name="codeDeverouillage"
@@ -106,7 +106,7 @@ const DistributeurInfoCard = ({ title, id }) => {
           className="btn-green px-11 py-2.5 mt-6 light-grey relative"
           onClick={() => updateClient()}
         >
-          Modifier
+          Save
         </button>
       </div>
     </div>

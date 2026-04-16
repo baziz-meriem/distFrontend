@@ -28,7 +28,7 @@ const infoCard = ({ title, id }) => {
         numTel: clientData.numTel,
       })
       .then((res) => {
-        toast.success("Le client a été modifié");
+        toast.success("Client updated successfully");
       })
       .catch((err) => console.log(err));
   };
@@ -56,7 +56,7 @@ const infoCard = ({ title, id }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Nom"
+              placeholder="Name"
               value={clientData.nom}
               onChange={(e) => handleChange(e)}
               name="nom"
@@ -67,7 +67,7 @@ const infoCard = ({ title, id }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={clientData.email}
               onChange={(e) => handleChange(e)}
               name="email"
@@ -80,7 +80,7 @@ const infoCard = ({ title, id }) => {
             <input
               type="text"
               className="w-full  pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={clientData.numTel}
               onChange={(e) => handleChange(e)}
               name="numTel"
@@ -93,7 +93,7 @@ const infoCard = ({ title, id }) => {
           className="btn-green px-11 py-2.5 mt-6 light-grey relative"
           onClick={() => updateClient()}
         >
-          Modifier
+          Save
         </button>
       </div>
     </div>

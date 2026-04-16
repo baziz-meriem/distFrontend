@@ -119,7 +119,7 @@ const BarChart3 = (props) => {
         className="text-10 text-center font-medium tracking-tight"
         style={{ color: "rgb(197,184,175)" }}
       >
-        Statistiques des Commandes Par distributeur
+        Orders by distributor
       </div>
       {props.labels.length > 0 ? (
         <>

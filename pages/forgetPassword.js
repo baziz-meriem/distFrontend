@@ -2,7 +2,7 @@ import ConnectForm from "@/components/loginPage/ConnectForm";
 import NavBar from "@/components/shared/NavMenu";
 import { faUser , faEnvelope , faLock } from "@fortawesome/free-solid-svg-icons";
 
-import { forgotPassword } from "@/services/authService";
+import { forgotPassword, roleToAuthPathSlug } from "@/services/authService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -19,11 +19,12 @@ const ForgetPassword = () => {
   const handleForgetPassword = async(e) => {
     e.preventDefault()
 try{
-    const {data} = await getRole(email)
-    const request = await forgotPassword(email,data.role) ; 
-    console.log(request)
-    if(request.data.success){
-        localStorage.setItem("role", data.role);
+    const { data } = await getRole(email);
+    const slug = roleToAuthPathSlug(data.role);
+    const request = await forgotPassword(email, data.role);
+    console.log(request);
+    if (request.data.success) {
+        localStorage.setItem("role", slug);
         toast.success(request.data.message);
         setEmail("")
     }

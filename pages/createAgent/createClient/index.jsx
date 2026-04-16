@@ -27,14 +27,14 @@ const createClient = () => {
   return (
     <div className="">
       <PageHeader
-        title="Ajouter un Nouveau Client"
-        description="Donner les informations générales du client"
+        title="Add client"
+        description="Enter the client's details"
       />
       <div className="h-full w-full relative overflow-y-hidden flex flex-row">
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Nom"
+              label="Name"
               options={options}
               steFunction={setData}
               attr="nom"
@@ -55,7 +55,7 @@ const createClient = () => {
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Numéro de télphone"
+              label="Phone number"
               options={options}
               steFunction={setData}
               attr="numTel"
@@ -70,7 +70,7 @@ const createClient = () => {
                   handleSubmit();
                 }}
               >
-                Ajouter le Client
+                Add client
               </button>
             </div>
           </div>

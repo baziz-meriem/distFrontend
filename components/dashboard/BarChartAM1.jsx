@@ -44,7 +44,7 @@ const BarChartAM1 = (props) => {
         },
         title: {
           display: true,
-          text: `Nombre de pannes par Mois de l'année courante `,
+          text: `Outages per month (current year)`,
           position: 'top',
           font: {
             size: 12,

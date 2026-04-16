@@ -4,7 +4,8 @@ export const roles = {
   agent: ["ADM", "AC", "AM", "DE"],
   client: ["client"],
   annonceur: ["annonceur"],
-  guest: ["ADM", "AC", "AM", "DE", "annonceur", "SADM", "client"],
+  /** Consommateur = customer accounts (auth/consommateur/login) */
+  guest: ["ADM", "AC", "AM", "DE", "annonceur", "SADM", "client", "Consommateur"],
 };
 
 export const accessRights = {

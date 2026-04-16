@@ -2,35 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Public sign-up route: there is no self-service registration API in this app yet.
- * Users with existing credentials should use Log in; new accounts are created by admins.
+ * Legacy route `/signup`: there is no self-service registration API.
+ * Accounts are created by administrators; we explain that and point to contact + login.
  */
 const SignUpForm = () => {
   return (
-    <div className="relative xl:w-1/3 lg:w-1/3 px-3 md:w-1/2 mx-auto pt-60 ">
-      <div className="mt-5 py-8 px-5 bg-effect rounded-md border formSection text-center">
+    <div className="relative mx-auto w-full max-w-md px-3 pt-60 md:max-w-lg">
+      <div className="formSection mt-5 rounded-md border border-gray-300 bg-white py-8 px-5 text-center shadow-md">
         <Image
           src="/logos/greenDevlift.png"
           width={120}
           height={100}
           alt="exaview logo"
-          className="block mx-auto"
+          className="mx-auto block"
         />
-        <p className="text-lg text-center my-7 text-light-green font-medium">
-          Create an account
+        <p className="my-7 text-center text-lg font-medium text-dark-green">
+          No public sign-up
         </p>
-        <p className="text-sm text-grey mb-6 leading-relaxed">
-          Self-service registration is not available here. New accounts are created by
-          your organization administrator. If you already have credentials, sign in
-          below.
+        <p className="mb-6 text-left text-sm leading-relaxed text-gray-600">
+          New users cannot create their own account here. Your organization’s admin
+          provisions accounts. If you need access, reach out through our contact
+          page.
         </p>
         <Link
-          href="/login"
-          className="btn-green inline-block w-full py-2.5 font-semibold rounded-md text-center"
+          href="/contact"
+          className="btn-green mb-3 inline-block w-full rounded-md py-2.5 text-center font-semibold"
         >
-          Log in
+          Request access (contact)
         </Link>
-        <p className="text-xs text-grey mt-6">
+        <Link
+          href="/login"
+          className="mb-3 inline-block w-full rounded-md border-2 border-dark-green py-2.5 text-center font-semibold text-dark-green hover:bg-gray-50"
+        >
+          I already have credentials — Log in
+        </Link>
+        <p className="text-xs text-gray-500">
           <Link href="/" className="text-light-green underline">
             Back to home
           </Link>

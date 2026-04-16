@@ -39,10 +39,10 @@ const CreateDecideur = () => {
       .then((res) => {
         console.log(res);
         if (res.data.status === "success") {
-          toast.success("Decideur Created Succesfully!");
+          toast.success("Decideur Created Successfully!");
           router.push("/listes/DE");
         } else {
-          toast.error("Some errors occured!");
+          toast.error("Some errors occurred!");
         }
       });
   };
@@ -51,14 +51,14 @@ const CreateDecideur = () => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter un Decideur"
-        description="Donner les informations générales de l'agent Commerciale"
+        title="Add decision-maker"
+        description="Enter the agent's details"
       />
       <div className="h-full w-full relative overflow-y-hidden flex flex-row">
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Nom"
+              label="Name"
               options={options}
               steFunction={setData}
               attr="nom"
@@ -79,7 +79,7 @@ const CreateDecideur = () => {
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Prenom"
+              label="First name"
               options={options}
               steFunction={setData}
               attr="prenom"
@@ -87,7 +87,7 @@ const CreateDecideur = () => {
               type="text"
             />
             <CustomInput
-              label="Numéro de télphone"
+              label="Phone number"
               options={options}
               steFunction={setData}
               attr="numTel"
@@ -102,7 +102,7 @@ const CreateDecideur = () => {
                   handleSubmit();
                 }}
               >
-                Ajouter Decideur
+                Add decision-maker
               </button>
             </div>
           </div>

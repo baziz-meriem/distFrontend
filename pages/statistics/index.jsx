@@ -141,17 +141,15 @@ const Statistics = ({ loggedInUser }) => {
   return (
     <div className="h-full w-full">
       <PageHeader
-        title="Statistiques "
-        description={`Welcome ${
+        title="Statistics"
+        description={`Welcome${
           loggedInUser
-            ? JSON.parse(loggedInUser).name +
-              " ! --- You are connected as: " +
-              JSON.parse(loggedInUser).role
+            ? `, ${JSON.parse(loggedInUser).name}. Signed in as ${JSON.parse(loggedInUser).role}.`
             : ""
         }`}
       />
 
-      <div className="py-4 text-xl font-semibold">Statistiques Générales</div>
+      <div className="py-4 text-xl font-semibold">Overview</div>
 
       <div className="w-fit mx-auto mb-8">
         {dateFilters.map((period) => (
@@ -197,7 +195,7 @@ const Statistics = ({ loggedInUser }) => {
       </div>
       <hr />
       <div className="py-4 text-xl font-semibold">
-        Statistiques des revenus{" "}
+        Revenue statistics{" "}
       </div>
 
       <div className="flex w-full h-1/2">
@@ -207,7 +205,7 @@ const Statistics = ({ loggedInUser }) => {
         <div className=" m-2  w-1/2 bg-white bg-opacity-100 drop-shadow-2xl shadow-all rounded-lg ">
           <BarChart6
             data={drinkRevenuData}
-            title="revenu par boisson"
+            title="Revenue by drink"
             color="120,12,160"
           />
         </div>
@@ -216,7 +214,7 @@ const Statistics = ({ loggedInUser }) => {
         <div className=" m-2 mb-10 w-1/2 bg-white bg-opacity-100 drop-shadow-2xl shadow-all rounded-lg ">
           <BarChart6
             data={regionRevenuData}
-            title="revenu par region"
+            title="Revenue by region"
             color="12,120,160"
           />
         </div>

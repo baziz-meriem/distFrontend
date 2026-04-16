@@ -47,15 +47,15 @@ const ListAnnonceur = () => {
     <div>
       <div className="flex-none">
         <PageHeader
-          title="Liste des annonceurs"
-          description="Affiche la liste de tous les annonceurss ainsi que leurs informations."
+          title="Advertisers"
+          description="Lists all advertisers and their details."
         />
       </div>
       <button
         className="block ml-auto  btn-green px-7 py-2.5 mt-6 light-grey relative"
         onClick={() => setOpen(!formIsOpen)}
       >
-        Ajouter un annonceur
+        Add an advertiser
       </button>
       {formIsOpen ? <CreateAnnonceur /> : <></>}
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

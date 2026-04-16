@@ -34,7 +34,7 @@ const ListeAnnonce = ({ loadingAnnonce, setLoading }) => {
           height="30"
           alt="user icon"
         ></Image>
-        <div className="text-xl font-medium tracking-1">Liste des annonce</div>
+        <div className="text-xl font-medium tracking-1">Ad list</div>
       </div>
       <div className="flex flex-wrap  py-5">
         {annonces && !loadingAnnonce ? (

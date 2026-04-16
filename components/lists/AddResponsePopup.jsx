@@ -22,7 +22,7 @@ const AddResponsePopup = ({ data, setData, closePopup, addResponse ,reclamationD
                         className="absolute -top-0 left-0"
                     ></Image>
                     <div className="pb-2 flex items-center justify-between">
-                        <h1 className='font-md text-xl'>Réponse</h1>
+                        <h1 className='font-md text-xl'>Reply</h1>
                         <Image
                             onClick={closePopup}
                             src="/icons/close.svg"
@@ -33,7 +33,7 @@ const AddResponsePopup = ({ data, setData, closePopup, addResponse ,reclamationD
                         ></Image>
                     </div>
                     <div className="pb-8 w-fit ml-auto text-light-green underline">
-                    <Link  href={`/listes/Reclamations/${reclamationData.id}`}>Voir les details de la réclamation </Link>
+                    <Link  href={`/listes/Reclamations/${reclamationData.id}`}>View claim details</Link>
 
                     </div>
                     <div className='flex gap-8'>
@@ -54,7 +54,7 @@ const AddResponsePopup = ({ data, setData, closePopup, addResponse ,reclamationD
                             className="btn-green px-11 py-2.5 mt-4 light-grey z-100"
                             onClick={addResponse}
                         >
-                            Ajouter
+                            Add
                         </button>
                     </div>
                     

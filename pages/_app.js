@@ -13,13 +13,18 @@ const montserrat = Montserrat({
 });
 
 Router.events.on("routeChangeStart", () => {
-  // Show loading skeleton when route changes
-  document.getElementById("loading-skeleton").style.display = "block";
+  const el = document.getElementById("loading-skeleton");
+  if (el) el.style.display = "block";
 });
 
 Router.events.on("routeChangeComplete", () => {
-  // Hide loading skeleton when route changes are complete
-  document.getElementById("loading-skeleton").style.display = "none";
+  const el = document.getElementById("loading-skeleton");
+  if (el) el.style.display = "none";
+});
+
+Router.events.on("routeChangeError", () => {
+  const el = document.getElementById("loading-skeleton");
+  if (el) el.style.display = "none";
 });
 
 export default function App({ Component, pageProps }) {

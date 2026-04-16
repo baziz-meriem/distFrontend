@@ -99,26 +99,26 @@ const AddBoisson = () => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter une boisson"
-        description="Donner les informations générales de la boisson"
+        title="Add drink"
+        description="Enter the drink's details"
       />
 
       <div className="h-full w-full relative overflow-y-hidden flex flex-row justify-center">
         <div className="w-1/2 m-4">
           <div>
             <div className="flex justify-between">
-              <p>Le boisson est nouveau ? </p>
+              <p>Is this a new drink? </p>
               <p
                 className="cursor-pointer"
                 onClick={() => setOpen(!openSection)}
               >
-                Crée un boisson
+                Create drink
               </p>
             </div>
             {openSection ? (
               <div className="space-y-5 mt-8">
                 <CustomInput
-                  label="Nom du boisson"
+                  label="Drink name"
                   steFunction={setDrink}
                   attr="label"
                   data={drinkData}
@@ -138,7 +138,7 @@ const AddBoisson = () => {
                       addNewDrink();
                     }}
                   >
-                    Ajouter
+                    Add
                   </button>
                 </div>
               </div>
@@ -147,7 +147,7 @@ const AddBoisson = () => {
           <div className="space-y-10 mt-16">
             {drinks && (
               <CustomSelect
-                label="selectionner un boisson"
+                label="Select a drink"
                 options={drinks}
                 steFunction={setData}
                 attr="boissonId"
@@ -156,7 +156,7 @@ const AddBoisson = () => {
             )}
 
             <CustomInput
-              label="Prix"
+              label="Price"
               steFunction={setData}
               attr="prix"
               data={data}
@@ -177,7 +177,7 @@ const AddBoisson = () => {
                   submitData();
                 }}
               >
-                Ajouter la boisson
+                Add drink
               </button>
             </div>
           </div>

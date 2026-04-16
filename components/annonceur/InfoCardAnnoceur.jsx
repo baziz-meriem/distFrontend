@@ -36,7 +36,7 @@ const InfoCardAnnoceur = ({ title }) => {
         }
       )
       .then((res) => {
-        toast.success("Le client a été modifié");
+        toast.success("Client updated successfully");
       })
       .catch((err) => console.log(err));
   };
@@ -64,7 +64,7 @@ const InfoCardAnnoceur = ({ title }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Nom"
+              placeholder="Name"
               value={annonceurData.nom}
               onChange={(e) => handleChange(e)}
               name="nom"
@@ -75,7 +75,7 @@ const InfoCardAnnoceur = ({ title }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceurData.email}
               onChange={(e) => handleChange(e)}
               name="email"
@@ -88,7 +88,7 @@ const InfoCardAnnoceur = ({ title }) => {
             <input
               type="text"
               className="w-full  pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceurData.phoneNumber}
               onChange={(e) => handleChange(e)}
               name="numTel"
@@ -98,7 +98,7 @@ const InfoCardAnnoceur = ({ title }) => {
             <input
               type="text"
               className="w-full  pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceurData.Adr}
               onChange={(e) => handleChange(e)}
               name="Adr"
@@ -111,7 +111,7 @@ const InfoCardAnnoceur = ({ title }) => {
           className="btn-green px-11 py-2.5 mt-6 light-grey relative"
           onClick={() => updateClient()}
         >
-          Modifier
+          Save
         </button>
       </div>
     </div>

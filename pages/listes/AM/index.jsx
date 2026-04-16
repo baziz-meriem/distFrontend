@@ -14,8 +14,8 @@ const ListAM = ({ AM }) => {
     <div>
       <div className="flex-none">
         <PageHeader
-          title="Liste des AMs"
-          description="Affiche la liste de tous les AMs ainsi que leurs informations."
+          title="Maintenance agents"
+          description="Lists all maintenance agents and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

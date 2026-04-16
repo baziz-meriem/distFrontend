@@ -43,7 +43,7 @@ const BarChartAM2 = (props) => {
         },
         title: {
           display: true,
-          text: `Nombre de pannes par années`,
+          text: `Outages by year`,
           position: 'top',
           font: {
             size: 12,

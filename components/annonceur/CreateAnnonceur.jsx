@@ -36,10 +36,10 @@ const CreateAnnonceur = () => {
         console.log(res);
         if (res.status === 201) {
           console.log("annonceur inserted");
-          toast.success("annonceur Created Succesfully!");
+          toast.success("annonceur Created Successfully!");
           router.push("/listes/Annonceur");
         } else {
-          toast.error("Some errors occured!");
+          toast.error("Some errors occurred!");
         }
       });
   };
@@ -50,7 +50,7 @@ const CreateAnnonceur = () => {
       <div className="h-full w-full relative overflow-y-hidden flex flex-row justify-end gap-4">
         <div className="space-y-10 mt-5">
           <CustomInput
-            label="Nom"
+            label="Name"
             steFunction={setData}
             attr="nom"
             data={data}
@@ -91,7 +91,7 @@ const CreateAnnonceur = () => {
               handleSubmit();
             }}
           >
-            Ajouter
+            Add
           </button>
         </div>
       </div>

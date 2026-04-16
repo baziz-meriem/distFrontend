@@ -135,7 +135,7 @@ const ReclamationDetails = () => {
       <ToastContainer />
       <PageHeader
         title="Reclamation Details"
-        description="Affiche les informations détaillées de la reclamation"
+        description="Detailed information for this claim"
       />
       {reclamationData.status != "treated" ? (
         <button

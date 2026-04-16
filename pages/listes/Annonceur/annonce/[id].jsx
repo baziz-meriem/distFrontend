@@ -6,11 +6,11 @@ const AnnoncePage = () => {
   return (
     <div>
       <PageHeader
-        title="Annonce Details"
-        description="Affiche les informations de l'annonceur"
+        title="Ad details"
+        description="Advertiser details"
       />
-      <InfoAnnonce title="Les informations de l'annonce"/>
-      <AnnoncePrice title='Donner un prix pour votre annonce' />
+      <InfoAnnonce title="Ad details"/>
+      <AnnoncePrice title='Set a price for your ad' />
     </div>
   );
 };

@@ -17,7 +17,7 @@ const overviewCard = () => {
           height="25"
           alt="user icon"
         ></Image>
-        <h1 className="text-lg pl-4">Niveau de charge des  récipients</h1>
+        <h1 className="text-lg pl-4">Container fill level</h1>
         </div>
         <div className="flex justify-center">
         <div className="p-2 w-2/3">
@@ -45,7 +45,7 @@ const overviewCard = () => {
           height="25"
           alt="user icon"
         ></Image>
-        <h1 className="text-xl pl-4">Température de l’eau</h1>
+        <h1 className="text-xl pl-4">Water temperature</h1>
         </div>
         <div className="flex justify-center">
         <div className=" p-2 w-2/3">

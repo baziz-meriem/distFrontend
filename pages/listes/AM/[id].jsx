@@ -35,13 +35,13 @@ const AmSignlePage = ({ AM,distributeurs,pannesByMonth ,pannesByYear }) => {
       <ToastContainer />
       <PageHeader
         title="AM Details"
-        description="Affiche les informations détaillées du AM"
+        description="Detailed information for this maintenance agent"
       />
       <button
         className="block ml-auto  btn-red px-7 py-2.5 mt-6 light-grey relative"
         onClick={() => deleteAM()}
       >
-        Supprimer AM
+        Delete AM
       </button>
       <div className="flex-auto pb-10  p-6 mt-6 shadow-all rounded-lg bg-transparent">
         <div className="w-full flex flex-wrap justify-between items-center">
@@ -59,7 +59,7 @@ const AmSignlePage = ({ AM,distributeurs,pannesByMonth ,pannesByYear }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={amData.prenom}
               onChange={(e) => handleChange(e)}
               name="prenom"
@@ -69,7 +69,7 @@ const AmSignlePage = ({ AM,distributeurs,pannesByMonth ,pannesByYear }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={amData.email}
               onChange={(e) => handleChange(e)}
               name="email"
@@ -79,7 +79,7 @@ const AmSignlePage = ({ AM,distributeurs,pannesByMonth ,pannesByYear }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={amData.numTel}
               onChange={(e) => handleChange(e)}
               name="numTel"

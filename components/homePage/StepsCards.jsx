@@ -1,10 +1,16 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const StepsCards = ({ step }) => {
   return (
-    <div className="bg-creem-green bg-effect px-5 py-10 text-center w-1/4 cursor-pointer hover:shadow-2xl">
-      <div className="text-2xl font-bold">{step.title}</div>
-      <div className="text-sm mt-5 text-gray-500">{step.description}</div>
+    <div className="group flex flex-1 flex-col rounded-2xl border border-gray-200/90 bg-white px-6 py-10 text-center shadow-sm transition hover:-translate-y-0.5 hover:border-light-green/40 hover:shadow-lg">
+      <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-light-green/20 text-light-green transition group-hover:bg-light-green/30">
+        <FontAwesomeIcon icon={step.icon} className="h-7 w-7" />
+      </div>
+      <h3 className="mt-6 text-xl font-bold text-dark-green">{step.title}</h3>
+      <p className="mt-4 flex-1 text-left text-sm leading-relaxed text-grey">
+        {step.description}
+      </p>
     </div>
   );
 };

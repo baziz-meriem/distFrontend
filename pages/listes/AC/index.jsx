@@ -15,8 +15,8 @@ const ListAC = ({AC}) => {
     <div>
       <div className="flex-none">
         <PageHeader
-          title="Liste des ACs"
-          description="Affiche la liste de tous les ACs ainsi que leurs informations."
+          title="Sales agents"
+          description="Lists all sales agents and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

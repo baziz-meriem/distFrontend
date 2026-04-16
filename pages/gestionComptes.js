@@ -4,26 +4,26 @@ const gestionComptes = ({ nbAM, nbAC, nbDecideurs }) => {
   return (
     <div>
       <PageHeader
-        title="Gestion des Comptes"
-        description="Some description here"
+        title="Account management"
+        description="Manage sales agents, decision-makers, and maintenance staff."
       />
       <div className="py-10 gap-6">
         <Card
-          title="Les agents commericiaux"
+          title="Sales agents (AC)"
           color="creem-green"
           stats={nbAC}
           link="/listes/AC"
           addLink="/createAgent/createAC"
         />
         <Card
-          title="Les Decideurs"
+          title="Decision-makers (DE)"
           color="creem-green"
           stats={nbDecideurs}
           link="/listes/DE"
           addLink="/createAgent/createDE"
         />
         <Card
-          title="Les agents de maintenance"
+          title="Maintenance agents (AM)"
           color="creem-green"
           stats={nbAM}
           link="/listes/AM"
@@ -44,7 +44,7 @@ export async function getServerSideProps() {
 
   let AC = await fetch(
     "https://distbackend-96a5.onrender.com/api/v1/profileManagement/AC"
-  ); 
+  );
   AC = await AC.json();
 
   let decideurs = await fetch(

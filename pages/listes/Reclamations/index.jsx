@@ -77,12 +77,12 @@ const Reclamations = () => {
 
       <div className="flex-none">
         <PageHeader
-          title="Liste des Réclamations"
-          description="Affiche la liste de toutes les Réclamations reçues."
+          title="Claims"
+          description="Lists all incoming claims."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">
-        <ListHeader title="Réclamations" />
+        <ListHeader title="Claims" />
         <ListRow key={Tablehead[0]} data={Tablehead} numColumns="5" toAdd=""  capitalize/>
         {Data.map((rowData) => (
           <ListRow

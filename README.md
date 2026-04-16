@@ -1,6 +1,6 @@
 # Web Dashboard (Front)
 
-A **Next.js** web application for operating a multi-tenant distribution network: clients, vending-style **distributeurs**, field agents, administrators, advertisers (**annonceurs**), and **réclamations** (support cases). The UI is mostly in French and talks to a REST API.
+A **Next.js** web application for operating a multi-tenant distribution network: clients, vending-style **distributors**, field agents, administrators, advertisers, and **claims** (support tickets). The UI is in **English** and talks to a REST API.
 
 ### Featured deployment (dispenser dashboard)
 
@@ -35,6 +35,17 @@ https://distbackend-96a5.onrender.com/api/v1
 
 Many pages also call this URL directly. To point the app at another environment, update `config/config.js` and replace hardcoded URLs as needed.
 
+### Demo credentials (also shown on `/login`)
+
+The login page lets you choose **Super admin** vs **Customer** so the correct endpoint is called.
+
+| Role | Email | Password | API |
+|------|--------|----------|-----|
+| Super admin (SADM) | `admin@example.com` | `demo123456` | `POST /api/v1/auth/sadm/login` |
+| Customer (consommateur) | `demo@example.com` | `demo123456` | `POST /api/v1/auth/consommateur/login` |
+
+Body for both: `{ "email": "...", "password": "..." }`.
+
 ---
 
 ## Getting started
@@ -60,7 +71,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Authentication and routing
 
-- **Login** (`/login`): Email and password. The app calls `/auth/role?email=…` to resolve the user’s role, then `/auth/{role}/login`. On success, a `user` cookie is set (id, role, token, name, `idClient` when applicable) and the user is sent to `/dashboard`.
+- **Login** (`/login`): Email and password. You pick **Super admin** or **Customer**; the app calls `POST /auth/sadm/login` or `POST /auth/consommateur/login` (see demo table above). On success, a `user` cookie is set and the JWT is attached for API calls; then redirect to `/dashboard`.
 - **Forgot / reset password** (`/forgetPassword`, `/resetPassword`): Uses `/auth/{role}/forgotPassword` and `/auth/{role}/resetPassword/:token`.
 - **Middleware** (`middleware.js`): Logged-in users hitting `/login` are redirected to `/dashboard`. Unauthenticated users hitting `/dashboard` are redirected to `/login`. `/createAgent` routes require a `user` cookie.
 
@@ -70,10 +81,10 @@ The dashboard shell (sidebar + content) is applied to all routes except `/`, `/a
 
 ## Roles and access control
 
-Roles used in the app include **SADM**, **ADM**, **AC**, **AM**, **DE**, **client**, and **annonceur**. Sidebar items are filtered with `utils/accessControl.js` and `config/accessByRole.js`:
+Roles used in the app include **SADM**, **ADM**, **AC**, **AM**, **DE**, **client**, and **annonceur** (API role for advertisers). Sidebar items are filtered with `utils/accessControl.js` and `config/accessByRole.js`:
 
-- **Super admin (SADM)** and **admin (ADM)**-style access gates features such as **Gestion des comptes** (ADM-only in config).
-- **Agent** grouping (ADM, AC, AM, DE) can reach distributeurs, annonces, réclamations, notifications, and statistics where configured.
+- **Super admin (SADM)** and **admin (ADM)**-style access gates features such as **Account management** (ADM-only in config).
+- **Agent** grouping (ADM, AC, AM, DE) can reach distributors, ads, claims, notifications, and statistics where configured.
 - **Guest** in config allows broad read of items like home, about, dashboard, and profile labels—actual server routes still expect login for most app pages.
 
 Exact rules live in `config/accessByRole.js`; adjust there if you add new pages or roles.
@@ -95,7 +106,7 @@ Exact rules live in `config/accessByRole.js`; adjust there if you add new pages 
 
 ### Account and agent management
 
-- **`/gestionComptes`** — Hub with counts and shortcuts for **agents commerciaux (AC)**, **décideurs (DE)**, and **agents de maintenance (AM)**; links to listing pages and creation wizards.
+- **`/gestionComptes`** — Hub with counts and shortcuts for **sales agents (AC)**, **decision-makers (DE)**, and **maintenance agents (AM)**; links to listing pages and creation wizards.
 - **Create flows** under `/createAgent/`: `createAC`, `createADM`, `createAM`, `createDE`, `createClient`.
 
 ### Lists and detail pages
@@ -103,24 +114,24 @@ Exact rules live in `config/accessByRole.js`; adjust there if you add new pages 
 - **Clients** — `/listes/Clients`, detail `/listes/Clients/[id]`.
 - **Administrateurs (ADM)** — `/listes/ADM`, detail `[id]`.
 - **AC / AM / DE** — `/listes/AC`, `/listes/AM`, `/listes/DE` with detail routes.
-- **Distributeurs** — `/listes/Distributeurs/AC` (list scoped by client for non–super-admin; super admin can see all via `getAllDistributeur` in `services/distributeurs.js`). Detail `/listes/Distributeurs/AC/[id]` includes:
-  - Distributor info, **map overlay**, **product carousel**, **boissons**, **maintenance agent (AM)** card, **affectation** UI, links to add **produit** / **boisson**.
+- **Distributors** — `/listes/Distributeurs/AC` (list scoped by client for non–super-admin; super admin can see all via `getAllDistributeur` in `services/distributeurs.js`). Detail `/listes/Distributeurs/AC/[id]` includes:
+  - Distributor info, **map overlay**, **product carousel**, **drinks**, **maintenance agent (AM)** card, **assignment** UI, links to add **product** / **drink**.
 
 ### Resources (products and drinks)
 
 - **`/AddDistributeur`** — Create a distributor: client, type, AM, region, state, map position, unlock code; posts to resource management API.
 - **`/AddProduit/[id]`**, **`/AddBoisson/[id]`** — Associate products and drinks with a distributor (`services/produit.js`, `services/boisson.js`).
 
-### Advertising (annonceurs & annonces)
+### Advertising (advertisers & ads)
 
-- **`/listes/Annonceur`** — List annonceurs for the logged-in user’s client; **create annonceur** modal/form.
-- **`/listes/Annonceur/[id]`** — Annonceur detail.
-- **`/listes/Annonceur/annonce/[id]`** — Annonce detail: information cards and **pricing** section for an ad.
+- **`/listes/Annonceur`** — List advertisers for the logged-in user’s client; **create advertiser** modal/form.
+- **`/listes/Annonceur/[id]`** — Advertiser detail.
+- **`/listes/Annonceur/annonce/[id]`** — Ad detail: information cards and **pricing** section.
 
-### Réclamations (claims / tickets)
+### Claims (support tickets)
 
-- **`/listes/Reclamations`** — Table of réclamations; open a popup to **add a response**; navigates to detail on success.
-- **`/listes/Reclamations/[id]`** — Detail and response thread (`services/reclamationReponses.js`: list, single, save/delete responses, delete réclamation).
+- **`/listes/Reclamations`** — Table of claims; open a popup to **add a response**; navigates to detail on success.
+- **`/listes/Reclamations/[id]`** — Detail and response thread (`services/reclamationReponses.js`: list, single, save/delete responses, delete claim).
 
 ### Statistics (`/statistics`)
 

@@ -22,19 +22,21 @@ const Card = ({ title, stats, color, link, addLink }) => {
           alt="user image"
           className=""
         ></Image>
-        <Link href={addLink} onClick={(e) => e.stopPropagation()}>
-          <Image
-            src={
-              cardColor === "creem-green"
-                ? "/icons/AddIcon-green.svg"
-                : "/icons/AddIcon-white.svg"
-            }
-            width={30}
-            height="20"
-            alt="user image"
-            className=""
-          ></Image>
-        </Link>
+        {addLink ? (
+          <Link href={addLink} onClick={(e) => e.stopPropagation()}>
+            <Image
+              src={
+                cardColor === "creem-green"
+                  ? "/icons/AddIcon-green.svg"
+                  : "/icons/AddIcon-white.svg"
+              }
+              width={30}
+              height="20"
+              alt="Add"
+              className=""
+            ></Image>
+          </Link>
+        ) : null}
       </div>
       <h1
         className={`text-${

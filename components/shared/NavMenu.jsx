@@ -60,8 +60,8 @@ const NavBar = () => {
           ))}
 
           <div className="ml-5 ">
-            <Link href="/signup">
-              <button className="btn-green">Sign Up</button>
+            <Link href="/login" className="btn-green inline-block">
+              Log in
             </Link>
           </div>
         </div>
@@ -114,8 +114,8 @@ const NavBar = () => {
             </Link>
           ))}
           <div className="mx-auto mt-5 w-fit block text-xs">
-            <Link href="/signup">
-              <button className="btn-green">Sign Up</button>
+            <Link href="/login" className="btn-green inline-block">
+              Log in
             </Link>
           </div>
         </div>

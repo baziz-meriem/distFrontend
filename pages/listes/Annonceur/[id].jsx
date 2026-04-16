@@ -18,16 +18,16 @@ const annonceurPage = () => {
   return (
     <div>
       <PageHeader
-        title="Annonceur Details"
-        description="Affiche les informations de l'annonceur"
+        title="Advertiser details"
+        description="Advertiser details"
       />
       <button
         className="block ml-auto  btn-red px-7 py-2.5 mt-6 light-grey relative text-xs"
         onClick={() => deleteClient()}
       >
-        Supprimer l'annonceur
+        Delete the advertiser
       </button>
-      <InfoCardAnnoceur title="Les information de lannonceur" />
+      <InfoCardAnnoceur title="Advertiser information" />
       <CreateAnnonce setLoading={setLoading} />
       <ListeAnnonce loadingAnnonce={loadingAnnonce} setLoading={setLoading} />
     </div>

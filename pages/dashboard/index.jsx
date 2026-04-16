@@ -107,18 +107,16 @@ const Dashboard = () => {
     <div className="h-5/6 w-full">
       <PageHeader
         title="Dashboard"
-        description={`Welcome ${
+        description={`Welcome${
           loggedInUser
-            ? loggedInUser.name +
-              " ! --- You are connected as: " +
-              loggedInUser.role
+            ? `, ${loggedInUser.name}. Signed in as ${loggedInUser.role}.`
             : ""
         }`}
       />
       <div className="grid grid-cols-3 gap-x-4 w-full ">
         {
           <Card
-            title="Nombre de Distributeurs"
+            title="Distributors"
             stats={distributeur.length}
             link="/listes/Distributeurs/AC"
             addLink="/AddDistributeur"
@@ -126,7 +124,7 @@ const Dashboard = () => {
         }
         {nbClient ? (
           <Card
-            title="Nombre de Clients"
+            title="Clients"
             stats={nbClient}
             color="creem-green"
             link="/listes/Clients"
@@ -139,7 +137,7 @@ const Dashboard = () => {
         )}
         {nbADM ? (
           <Card
-            title="Nombre de ADM"
+            title="ADMs"
             stats={nbADM}
             link="/listes/ADM"
             addLink="/createAgent/createADM"
@@ -156,7 +154,7 @@ const Dashboard = () => {
             {distributeurs.length > 0 && clients.length > 0 && (
               <BarChart
                 distributeurs={distributeurs}
-                title="statistiques représentant le nombre de nouveaux clients par mois"
+                title="New clients per month (by client)"
                 clients={clients}
               />
             )}

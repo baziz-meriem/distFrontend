@@ -71,7 +71,7 @@ const CreateAnnonce = ({ setLoading }) => {
             alt="user icon"
           ></Image>
           <div className="text-xl font-medium tracking-1">
-            Ajouter une annonce
+            Add an ad
           </div>
         </div>
         <button
@@ -97,9 +97,9 @@ const CreateAnnonce = ({ setLoading }) => {
               />
             </div>
             <div className="w-5/12 ">
-              <label> Date Debut</label>
+              <label> Start date</label>
               <CustomInput
-                label="Date debut"
+                label="Start date"
                 steFunction={setData}
                 attr="DateDebut"
                 data={annonceData}
@@ -107,9 +107,9 @@ const CreateAnnonce = ({ setLoading }) => {
               />
             </div>
             <div className="w-5/12 ">
-              <label> Date Fin</label>
+              <label> End date</label>
               <CustomInput
-                label="Date debut"
+                label="End date"
                 steFunction={setData}
                 attr="DateFin"
                 data={annonceData}
@@ -117,7 +117,7 @@ const CreateAnnonce = ({ setLoading }) => {
               />
             </div>
             <div className="w-5/12 ">
-              <label>Les categories</label>
+              <label>Categories</label>
               <CustomInput
                 label="cat1 , cat2 ..."
                 steFunction={setData}
@@ -127,9 +127,9 @@ const CreateAnnonce = ({ setLoading }) => {
               />
             </div>
             <div className="w-5/12 ">
-              <label>Duré d'affichage</label>
+              <label>Display duration</label>
               <CustomInput
-                label="Duré d'affichage"
+                label="Display duration"
                 steFunction={setData}
                 attr="periodeAffichage"
                 data={annonceData}
@@ -142,7 +142,7 @@ const CreateAnnonce = ({ setLoading }) => {
               className="btn-green px-11 py-2.5 mt-3 block ml-auto light-grey relative"
               onClick={() => addAnnonce()}
             >
-              Ajouter
+              Add
             </button>
           </div>
         </div>

@@ -22,8 +22,8 @@ const ListeDistributeur = ({ distributeur }) => {
     <div className="flex flex-col min-h-full">
       <div className="flex-none">
         <PageHeader
-          title="Liste des Distributeurs"
-          description="Affiche la liste de tous les Distributeurs ainsi que leurs informations."
+          title="Distributors"
+          description="Lists all distributors and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

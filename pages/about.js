@@ -1,5 +1,7 @@
 import NavBar from "@/components/shared/NavMenu";
 import Image from "next/image";
+import Link from "next/link";
+
 const About = () => {
   return (
     <div className="h-screen w-full relative overflow-hidden">
@@ -34,9 +36,12 @@ const About = () => {
             deliver high-quality results on time and within budget. Contact us
             to see how we can help your business achieve its goals.
           </div>
-          <button className="btn-green mt-5 md:text-lg text-sm px-10 font-semibold">
-            Contact US
-          </button>
+          <Link
+            href="/contact"
+            className="btn-green mt-5 inline-block md:text-lg text-sm px-10 font-semibold"
+          >
+            Contact us
+          </Link>
         </div>
       </div>
     </div>

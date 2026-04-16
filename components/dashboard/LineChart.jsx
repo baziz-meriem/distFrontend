@@ -54,7 +54,7 @@ const LineChart = ({ data }) => {
             },
             title: {
               display: true,
-              text: "statistiques représentant le nombre de nouveaux clients par mois",
+              text: "New clients per month",
               position:'bottom',
               legend: {
                 display: false,

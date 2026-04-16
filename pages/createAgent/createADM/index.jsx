@@ -37,10 +37,10 @@ const createADM = ({ clients }) => {
       )
       .then((res) => {
         if (res.data.status === "success") {
-          toast.success("ADM Created Succesfully!");
+          toast.success("ADM Created Successfully!");
           router.push("/listes/ADM");
         } else {
-          toast.error("Some errors occured!");
+          toast.error("Some errors occurred!");
         }
       });
   };
@@ -49,13 +49,13 @@ const createADM = ({ clients }) => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter un ADM"
-        description="Donner les informations générales de l'agent Commerciale"
+        title="Add ADM"
+        description="Enter the agent's details"
       />
       <div className="h-full w-full relative flex flex-wrap py-10">
         <div className="w-1/2  mt-5 pr-5 py-3">
           <CustomInput
-            label="Nom"
+            label="Name"
             options={options}
             steFunction={setData}
             attr="nom"
@@ -65,7 +65,7 @@ const createADM = ({ clients }) => {
         </div>
         <div className="w-1/2  mt-5 pr-5 py-3">
           <CustomInput
-            label="Prénom"
+            label="First name"
             options={options}
             steFunction={setData}
             attr="prenom"
@@ -96,7 +96,7 @@ const createADM = ({ clients }) => {
         </div>
         <div className="w-1/2  mt-5 pr-5 py-3">
           <CustomInput
-            label="Numéro de télphone"
+            label="Phone number"
             options={options}
             steFunction={setData}
             attr="numTel"
@@ -113,7 +113,7 @@ const createADM = ({ clients }) => {
           handleSubmit();
         }}
       >
-        Ajouter ADM
+        Add ADM
       </button>
     </div>
   );

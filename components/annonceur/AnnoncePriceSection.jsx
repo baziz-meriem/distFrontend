@@ -107,9 +107,9 @@ const AnnoncePrice = ({ title }) => {
             )}
           </div>
 
-          <div className="w-1/3">Type de Payment: {price.TypePayment} </div>
-          <div className="w-1/3">Nombre de vue: {price.NbVues}</div>
-          <div className="w-1/3"> Prix: {price.PrixAnnonce} DA</div>
+          <div className="w-1/3">Payment type: {price.TypePayment} </div>
+          <div className="w-1/3">Views: {price.NbVues}</div>
+          <div className="w-1/3"> Price: {price.PrixAnnonce} DA</div>
           <div className="cursor-pointer" onClick={() => deletePrice(price)}>
             <FontAwesomeIcon
               icon={faTrash}
@@ -133,10 +133,10 @@ const AnnoncePrice = ({ title }) => {
           </div>
           <div className="p-2 mt-2 border-solid border-grey w-1/3">
             <CustomSelect
-              label="Type de payment"
+              label="Payment type"
               options={[
-                { nom: "par vue", id: "par vue" },
-                { nom: "par periode", id: "par periode" },
+                { nom: "Per view", id: "par vue" },
+                { nom: "Per period", id: "par periode" },
               ]}
               steFunction={setData}
               attr="TypePayment"
@@ -148,8 +148,8 @@ const AnnoncePrice = ({ title }) => {
             <CustomInput
               label={
                 data.TypePayment == "par vue"
-                  ? "Prix unitaire"
-                  : "Prix d'affichage"
+                  ? "Unit price"
+                  : "Display price"
               }
               steFunction={setData}
               attr="PrixAnnonce"
@@ -164,7 +164,7 @@ const AnnoncePrice = ({ title }) => {
           className="btn-green px-11 py-2.5 mt-6 light-grey relative"
           onClick={() => addPrice()}
         >
-          Ajouter{" "}
+          Add{" "}
         </button>
       </div>
     </div>

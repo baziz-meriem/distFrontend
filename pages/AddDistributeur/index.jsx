@@ -21,7 +21,7 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
     codeDeverouillage: null,
   });
 
-  // todo fixer les type des distributeurs
+  // TODO: fix distributor types enum when API is finalized
   const DistributeurTypes = [
     { id: "type1", nom: "Type 1" },
     { id: "type2", nom: "Type 2" },
@@ -42,10 +42,10 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
         console.log(res);
         if (res.status === 201) {
           console.log("AM inserted");
-          toast.success("Distributeur Created Succesfully!");
+          toast.success("Distributeur Created Successfully!");
           router.push("/listes/Distributeurs/AC");
         } else {
-          toast.error("Some errors occured!");
+          toast.error("Some errors occurred!");
         }
       });
   };
@@ -54,8 +54,8 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter un distributeur"
-        description="Donner les informations générales du distributeur"
+        title="Add distributor"
+        description="Enter the distributor's details"
       />
       <div className="h-full w-full relative flex flex-row">
         <div className="w-1/2 m-4">
@@ -90,14 +90,14 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
               data={data}
             /> */}
             <CustomSelect
-              label="Etat"
+              label="Status"
               options={etat}
               steFunction={setData}
               attr="etat"
               data={data}
             />
             <CustomSelect
-              label="Région"
+              label="Region"
               options={regions}
               steFunction={setData}
               attr="idRegion"
@@ -109,7 +109,7 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="code de Deverouillage"
+              label="Unlock code"
               options={clients}
               steFunction={setData}
               attr="codeDeverouillage"
@@ -125,7 +125,7 @@ const AddDistributeur = ({ clients, AMs, regions }) => {
                   submitData();
                 }}
               >
-                Ajouter le Distributeur
+                Add distributor
               </button>
             </div>
           </div>

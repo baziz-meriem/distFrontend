@@ -88,7 +88,7 @@ const BarChart2 = (props) => {
         className="text-10 text-center font-medium tracking-tight"
         style={{ color: "rgb(197,184,175)" }}
       >
-        Statistiques de commandes de consommation
+        Consumption orders
       </div>
       {props.data.length>0 ? (
         <Bar data={chartData} options={chartOptions} />

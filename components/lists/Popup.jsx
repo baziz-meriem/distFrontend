@@ -19,7 +19,7 @@ const Popup = ({data,closePopup}) => {
           alt="exaview logo"
           className="absolute -top-0 left-0"
         ></Image> 
-          <h1 className='pb-8 font-md text-xl'>Réponse</h1>
+          <h1 className='pb-8 font-md text-xl'>Reply</h1>
 
           <div className='flex gap-8'>
             <h1 className='text-grey font-light text-lg '>Date</h1>

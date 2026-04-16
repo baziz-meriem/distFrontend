@@ -45,9 +45,12 @@ const ListRow = ({ data, numColumns, toAdd, onRowClick , capitalize }) => {
     <div
       className={`cursor-pointer border-b-2 p-4 mt-4 border-solid border-${Color} hover:bg-green-500 hover:ml-3 hover:border-l-2 hover:border-l-green-600 hover:bg-opacity-5`}
       onClick={() => {
-        toAdd === "response"
-          ? onRowClick()
-          : router.push(router.pathname + "/" + data.id);
+        if (toAdd === "response") {
+          onRowClick();
+          return;
+        }
+        if (data == null || data.id == null) return;
+        router.push(`${router.pathname}/${data.id}`);
       }}
     >
       <div

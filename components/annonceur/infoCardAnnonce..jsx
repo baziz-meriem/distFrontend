@@ -46,7 +46,7 @@ const InfoAnnonce = ({ title }) => {
         idClient: annonceData.idClient,
       })
       .then((res) => {
-        toast.success("L'annonceur a été modifié");
+        toast.success("Advertiser updated successfully");
       })
       .catch((err) => console.log(err));
   };
@@ -64,7 +64,7 @@ const InfoAnnonce = ({ title }) => {
 
   const [annonceData, setData] = useState(null);
 
-  if (!annonceData || !annonceur) return <div>Loding..</div>;
+  if (!annonceData || !annonceur) return <div>Loading…</div>;
 
   return (
     <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">
@@ -87,7 +87,7 @@ const InfoAnnonce = ({ title }) => {
             <input
               type="date"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none border bg-gray-200 shadow-md mt-2 rounded-md px-4 py-2"
-              placeholder="Nom"
+              placeholder="Name"
               value={displayDate(annonceData.DateDebut)}
               onChange={(e) => handleChange(e)}
               name="DateDebut"
@@ -99,7 +99,7 @@ const InfoAnnonce = ({ title }) => {
             <input
               type="date"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none border bg-gray-200 shadow-md mt-2 rounded-md px-4 py-2"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={displayDate(annonceData.DateFin)}
               onChange={(e) => handleChange(e)}
               name="DateFin"
@@ -111,7 +111,7 @@ const InfoAnnonce = ({ title }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none border bg-gray-200 shadow-md mt-2 rounded-md px-4 py-2"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceData.periodeAffichage + " second"}
               onChange={(e) => handleChange(e)}
               name="periodeAffichage"
@@ -123,7 +123,7 @@ const InfoAnnonce = ({ title }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none border bg-gray-200 shadow-md mt-2 rounded-md px-4 py-2"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceur.nom}
               onChange={(e) => handleChange(e)}
               name="idClient"
@@ -135,7 +135,7 @@ const InfoAnnonce = ({ title }) => {
             <input
               type="text"
               className="w-full pl-2 pr-4 bg-transparent placeholder-gray-300 focus:outline-none border bg-gray-200 shadow-md mt-2 rounded-md px-4 py-2"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={annonceData.idBoisson}
               onChange={(e) => handleChange(e)}
               name="idClient"

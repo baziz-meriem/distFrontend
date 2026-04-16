@@ -111,12 +111,12 @@ const DistributeursAC = () => {
       <ToastContainer />
       <PageHeader
         title="Distributeur Details"
-        description="Affiche les informations détaillées du distributeur"
+        description="Detailed information for this distributor"
       />
 
-      <DistributeurInfoCard title="Distributeur Infos" id={id} />
+      <DistributeurInfoCard title="Distributor details" id={id} />
       <div className="flex gap-4 h-40">
-        <AmCard am={amData} title="AM du distributeur" />
+        <AmCard am={amData} title="Maintenance agent" />
         
         <div className=" w-1/2  mt-6 shadow-all rounded-lg bg-transparent overflow-hidden">
           {showDetails ? <MapOverlay /> : <Map />}
@@ -134,11 +134,11 @@ const DistributeursAC = () => {
 
         <div className="flex items-center mt-6">
           <div className="text-xl px-16 font-medium flex justify-between w-full">
-            <div>Les Produits</div>
+            <div>Products</div>
             <div>
               <Link href={`/AddProduit/${id}`}>
                 <button className="btn-green block ml-auto text-sm">
-                  Ajouter un Produit
+                  Add product
                 </button>
               </Link>
             </div>
@@ -155,16 +155,16 @@ const DistributeursAC = () => {
             alt="user icon"
           />
           <div className="text-xl font-medium flex justify-between w-full">
-            <div>Les Boissons</div>
+            <div>Drinks</div>
             <div>
               <button className="btn-green block ml-auto text-sm">
-                <Link href={`/AddBoisson/${id}`}>Ajouter une Boisson</Link>
+                <Link href={`/AddBoisson/${id}`}>Add drink</Link>
               </button>
             </div>
           </div>
         </div>
         <div className="text-gray-500 mt-1">
-          Liste de toutes les boissons que le distributeur peut préparer
+          Drinks this distributor can prepare
         </div>
         <div className="grid grid-cols-3 gap-16">
           {boissonData &&

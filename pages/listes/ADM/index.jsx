@@ -16,8 +16,8 @@ console.log(AM)
     <div>
       <div className="flex-none">
         <PageHeader
-          title="Liste des ADMs"
-          description="Affiche la liste de tous les ADMs ainsi que leurs informations."
+          title="ADMs"
+          description="Lists all ADMs and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

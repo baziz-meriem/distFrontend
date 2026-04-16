@@ -80,21 +80,21 @@ const AddProduit = () => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter un produit"
-        description="Donner les informations générales du produit"
+        title="Add product"
+        description="Enter the product's details"
       />
       <div className="h-full w-full relative overflow-y-hidden flex flex-row justify-center">
         <div className="w-1/2 m-4">
           <div className="flex justify-between">
-            <p>Le produit est nouveau ? </p>
+            <p>Is this a new product? </p>
             <p className="cursor-pointer" onClick={() => setOpen(!sectionOpen)}>
-              Crée le produit
+              Create product
             </p>
           </div>
           {sectionOpen ? (
             <div className="space-y-6 mt-8">
               <CustomInput
-                label="Nom"
+                label="Name"
                 steFunction={setData}
                 attr="label"
                 data={data}
@@ -108,7 +108,7 @@ const AddProduit = () => {
                     submitnewProductData();
                   }}
                 >
-                  Créer le produit
+                  Create product
                 </button>
               </div>
             </div>
@@ -117,7 +117,7 @@ const AddProduit = () => {
           <div className="space-y-6 mt-8">
             {products && (
               <CustomSelect
-                label="selectionner un produit"
+                label="Select a product"
                 options={products}
                 steFunction={setProductData}
                 attr="produitId"
@@ -125,7 +125,7 @@ const AddProduit = () => {
               />
             )}
             <CustomInput
-              label="Quantité"
+              label="Quantity"
               steFunction={setProductData}
               attr="quantite"
               data={productData}
@@ -138,7 +138,7 @@ const AddProduit = () => {
                   submitData();
                 }}
               >
-                Ajouter le produit
+                Add product
               </button>
             </div>
           </div>

@@ -15,8 +15,8 @@ const ListDE = ({DE}) => {
     <div>
       <div className="flex-none">
         <PageHeader
-          title="Liste des DEs"
-          description="Affiche la liste de tous les DEs ainsi que leurs informations."
+          title="Decision-makers"
+          description="Lists all decision-makers and their details."
         />
       </div>
       <div className="flex-auto  p-6 mt-6 shadow-all rounded-lg bg-transparent">

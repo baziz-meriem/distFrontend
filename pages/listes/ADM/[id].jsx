@@ -25,13 +25,13 @@ const AcSignlePage = ({ ADM }) => {
       <ToastContainer />
       <PageHeader
         title="ADM Details"
-        description="Affiche les informations détaillées du ADM"
+        description="Detailed information for this ADM"
       />
       <button
         className="block ml-auto  btn-red px-7 py-2.5 mt-6 light-grey relative"
         onClick={() => deleteAC()}
       >
-        Supprimer ADM
+        Delete ADM
       </button>
       <div className="flex-auto pb-10  p-6 mt-6 shadow-all rounded-lg bg-transparent">
         <div className="w-full flex flex-wrap justify-between items-center">
@@ -49,7 +49,7 @@ const AcSignlePage = ({ ADM }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={admData.prenom}
               onChange={(e) => handleChange(e)}
               name="prenom"
@@ -59,7 +59,7 @@ const AcSignlePage = ({ ADM }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={admData.email}
               onChange={(e) => handleChange(e)}
               name="email"
@@ -69,7 +69,7 @@ const AcSignlePage = ({ ADM }) => {
             <input
               type="text"
               className="w-full px-0 bg-transparent placeholder-gray-300 focus:outline-none"
-              placeholder="Chercher..."
+              placeholder="Search..."
               value={admData.numTel}
               onChange={(e) => handleChange(e)}
               name="numTel"
@@ -81,7 +81,7 @@ const AcSignlePage = ({ ADM }) => {
             className="btn-green px-11 py-2.5 mt-6 light-grey relative"
             onClick={() => updateAC()}
           >
-            Modifier
+            Save
           </button>
         </div> */}
       </div>

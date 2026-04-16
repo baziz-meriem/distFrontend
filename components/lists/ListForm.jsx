@@ -31,10 +31,10 @@ function  ListForm({ agent }){
   const options = ["option1", "option2", "option3"];
   return (
     <div className="my-2">
-      <h1 className="my-2 text-sm text-grey ">Créer un nouveau {agent}</h1>
+      <h1 className="my-2 text-sm text-grey ">Create new {agent}</h1>
       <div className="flex items-center justify-center  gap-8">
         <CustomInput
-          label="Nom"
+          label="Name"
           options={options}
           steFunction={setData}
           attr="nom"
@@ -43,7 +43,7 @@ function  ListForm({ agent }){
           size="small"
         />
         <CustomInput
-          label="Prénom"
+          label="First name"
           options={options}
           steFunction={setData}
           attr="prenom"
@@ -61,7 +61,7 @@ function  ListForm({ agent }){
           size="small"
         />
         <CustomInput
-          label="Numéro de télphone"
+          label="Phone number"
           options={options}
           steFunction={setData}
           attr="numTel"
@@ -69,15 +69,15 @@ function  ListForm({ agent }){
           type="number"
           size="small"
         />
-        <button className="btn-green px-11 py-2.5 light-grey">Ajouter</button>
+        <button className="btn-green px-11 py-2.5 light-grey">Add</button>
       </div>
       <h1 className="my-2 text-sm text-grey">
-        Choisir un {agent} qui existe déja{" "}
+        Choose an existing {agent}{" "}
       </h1>
       <div className="flex items-center justify-center  gap-8 ">
         <div className="flex-1">
           <CustomSelect
-            label="Selectioner un ADM"
+            label="Select an ADM"
             options={ADMs}
             steFunction={setData}
             attr="client"
@@ -85,7 +85,7 @@ function  ListForm({ agent }){
             size="small"
           />
         </div>
-        <button className="btn-green px-11 py-2.5 light-grey ">Affecter</button>
+        <button className="btn-green px-11 py-2.5 light-grey ">Assign</button>
       </div>
     </div>
   );

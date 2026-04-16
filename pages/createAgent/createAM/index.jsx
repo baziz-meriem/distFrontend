@@ -37,10 +37,10 @@ const createAM = () => {
       .then((res) => {
         if (res.data.status === "success") {
           console.log("AM inserted");
-          toast.success("AM Created Succesfully!");
+          toast.success("AM Created Successfully!");
           router.push('/listes/AM')
         } else {
-          toast.error("Some errors occured!");
+          toast.error("Some errors occurred!");
         }
       })
       .catch((err) => console.log(err));
@@ -50,14 +50,14 @@ const createAM = () => {
     <div className="">
       <ToastContainer />
       <PageHeader
-        title="Ajouter un Agent Maintenance"
-        description="Donner les informations générales de l'agent Commerciale"
+        title="Add maintenance agent"
+        description="Enter the agent's details"
       />
       <div className="h-full w-full relative overflow-y-hidden flex flex-row">
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Nom"
+              label="Name"
               options={options}
               steFunction={setData}
               attr="nom"
@@ -78,7 +78,7 @@ const createAM = () => {
         <div className="w-1/2 m-4">
           <div className="space-y-10 mt-16">
             <CustomInput
-              label="Prénom"
+              label="First name"
               options={options}
               steFunction={setData}
               attr="prenom"
@@ -86,7 +86,7 @@ const createAM = () => {
               type="text"
             />
             <CustomInput
-              label="Numéro de télphone"
+              label="Phone number"
               options={options}
               steFunction={setData}
               attr="numTel"
@@ -101,7 +101,7 @@ const createAM = () => {
                   handleSubmit();
                 }}
               >
-                Ajouter AM
+                Add maintenance agent
               </button>
             </div>
           </div>

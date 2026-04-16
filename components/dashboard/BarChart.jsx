@@ -41,7 +41,7 @@ const BarChart = (props) => {
         },
         title: {
           display: true,
-          text: 'Nombre de distributeurs par client',
+          text: 'Distributors per client',
           position: 'bottom',
         },
       },
